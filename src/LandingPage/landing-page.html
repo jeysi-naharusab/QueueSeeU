@@ -1,18 +1,49 @@
-
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QueueSeeU - Landing Page</title>
-    <style>
-        body { font-family: Arial, sans-serif; text-align: center; margin: 50px; }
-        h1 { color: #2c3e50; }
-        p { color: #34495e; }
-    </style>
+    <title>Registration</title>
+    <link rel="stylesheet" href="styles.css">
+    
 </head>
 <body>
-    <h1>Welcome to QueueSeeU</h1>
-    <p>Your smart appointment and queue management system.</p>
+    <div class="container">
+        <div class="welcome-section">
+            <h1>Welcome</h1>
+            <p>Lorem ipsum dolor sit amet. Id nesciunt repellat nam autem nisi non sapiente deleniti.</p>
+            <button class="btn" onclick="goToLogin()">Login</button>
+        </div>
+        <div class="registration-section">
+            <h2>Registration</h2>
+            <div class="progress-container">
+                <div class="steps">
+                    <span class="step active">🎓</span>
+                    <span class="step">📧</span>
+                    <span class="step">✔️</span>
+                    <span class="step">🔒</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress" id="progress"></div>
+                </div>
+            </div>
+            <h3>Set Your Password</h3>
+            <div class="password-container">
+                <input type="password" id="password" placeholder="Password" onkeyup="validatePassword()">
+          
+                <button type="button" onclick="togglePassword('password')">👁️</button>
+            </div>
+            <div class="password-container">
+                <input type="password" id="confirm-password" placeholder="Confirm Password" onkeyup="validatePassword()">
+                <button type="button" onclick="togglePassword('confirm-password')">👁️</button>
+            </div>
+            <ul>
+                <li id="char-min" class="invalid">❌ 8 characters minimum</li>
+                <li id="num" class="invalid">❌ Contains a number</li>
+                <li id="uppercase" class="invalid">❌ Contains an uppercase</li>
+            </ul>
+            <button class="btn" id="nextBtn" onclick="nextStep()" disabled>Next</button>
+        </div>
+    </div>
+ <script src="script.js"></script>
 </body>
 </html>
